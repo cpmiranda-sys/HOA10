@@ -1,0 +1,25 @@
+---
+- name: Update workstations
+  hosts: all
+  become: true
+  roles:
+  - base
+
+- name: Install Elastic Stack
+  hosts: elasticsearch
+  become: true
+  roles:
+  - elasticsearch
+
+- name: Install Kibana                                               
+  hosts: kibana                   
+  become: true
+  roles:
+  - kibana
+
+- name: Install logstash
+  hosts: logstash
+  become: true
+  roles:
+  - logstash
+
